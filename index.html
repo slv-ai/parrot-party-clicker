@@ -8,26 +8,68 @@
     <link href="/styles/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Clicks: 0 </h1>
+    <h1 id="counter">Clicks: 0</h1>
 
-      <img src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif" />
+      <img 
+      id="parrot"
+      src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif"
+      alt="Dancing party parrot"
+      />
+      
+        <button id="reset">reset</button>
 
-    <!--  TODO: Add reset button -->
+        <script>
+         "use strict";
 
-    <!--  Extra: -->
-    <!-- <main>
-      <div id="box-one" class="box box--mouseover">
-        <p>hover over me</p>
-      </div>
-      <div id="box-two" class="box box--keydown">
-        <p>press space</p>
-      </div>
-      <div id="box-three" class="box box--click">
-        <p>click me</p>
-      </div>
-      <div id="box-four" class="box box--dblclick">
-        <p>double click me</p>
-      </div>
-    </main> -->
+        let clickCount = 0;
+
+        const counter = document.querySelector("#counter");
+        const parrot = document.querySelector("#parrot");
+        const resetButton = document.querySelector("#reset");
+
+          parrot.addEventListener("click", () => {
+        clickCount += 1;
+        counter.textContent = `Clicks: ${clickCount}`;
+
+        if (clickCount === 10) {
+          parrot.style.transform = "scale(1.5)";
+          counter.textContent = `Clicks: ${clickCount} 🎉`;
+        }
+      });
+
+    resetButton.addEventListener("click", () => {
+        clickCount = 0;
+        counter.textContent = `Clicks: ${clickCount}`;
+        parrot.style.transform = "scale(1)";
+      });
+
+      resetButton.addEventListener("click", () => {
+        clickCount = 0;
+        counter.textContent = `Clicks: ${clickCount}`;
+        parrot.style.transform = "scale(1)";
+      });
+    </script>
   </body>
 </html>
+
+
+
+
+    <!-- </script>
+  </body>
+</html>
+    // <main>
+    //   <div id="box-one" class="box box--mouseover">
+    //     <p>hover over me</p>
+    //   </div>
+    //   <div id="box-two" class="box box--keydown">
+    //     <p>press space</p>
+    //   </div>
+    //   <div id="box-three" class="box box--click">
+    //     <p>click me</p>
+    //   </div>
+    //   <div id="box-four" class="box box--dblclick">
+    //     <p>double click me</p>
+    //   </div>
+    // </main> -->
+  
