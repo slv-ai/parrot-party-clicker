@@ -7,6 +7,40 @@
 //    reaches a specific number.
 //    (Ex: make parrot bigger, smaller, change the text/emoji,
 //    etc.)
+const state = {
+    clickCount : 0,
+}
+
+const updateClickCount = () => {
+    const parrotCountContainer = document.getElementById('parrot-count');
+    state.clickCount += 1;
+    parrotCountContainer.textContent = state.clickCount;
+
+    const parrot = document.querySelector('#parrot');
+    if (state.clickCount >= 10 ){
+        parrot.classList.add('large');
+    }
+};
+
+const resetClickButton = () => {
+    const parrotCountContainer = document.getElementById('parrot-count');
+    state.clickCount = 0;
+    parrotCountContainer.textContent = state.clickCount;
+
+    const parrot = document.querySelector('#parrot');
+    parrot.classList.remove('large');
+}
+
+// register all Events
+const registerEventHandlers = () => {
+    const parrot = document.getElementById("parrot");
+    parrot.addEventListener("click",updateClickCount);
+
+    const reset = document.getElementById("reset-button");
+    reset.addEventListener("click",resetClickButton)
+}
+
+document.addEventListener('DOMContentLoaded',registerEventHandlers);
 
 // Extra:
 // // Box 1: When the mouse hovers over Box 1, switch the background to pink

@@ -6,58 +6,31 @@
 
     <title>Parrot Party Clicker</title>
     <link href="/styles/styles.css" rel="stylesheet" type="text/css" />
+    <script defer src="/src/index.js"></script>
   </head>
   <body>
-    <h1 id="counter">Clicks: 0</h1>
-
-      <img 
+    <h1>Clicks: <span id ="parrot-count">0</span></h1>
+    <section>
+    <img 
       id="parrot"
       src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif"
       alt="Dancing party parrot"
-      />
+    />
+    <p>
+      <button id = "reset-button">Reset</button>
+    </p>
+    </section>
+    
       
-        <button id="reset">reset</button>
+        
+        
 
-        <script>
-         "use strict";
-
-        let clickCount = 0;
-
-        const counter = document.querySelector("#counter");
-        const parrot = document.querySelector("#parrot");
-        const resetButton = document.querySelector("#reset");
-
-          parrot.addEventListener("click", () => {
-        clickCount += 1;
-        counter.textContent = `Clicks: ${clickCount}`;
-
-        if (clickCount === 10) {
-          parrot.style.transform = "scale(1.5)";
-          counter.textContent = `Clicks: ${clickCount} 🎉`;
-        }
-      });
-
-    resetButton.addEventListener("click", () => {
-        clickCount = 0;
-        counter.textContent = `Clicks: ${clickCount}`;
-        parrot.style.transform = "scale(1)";
-      });
-
-      resetButton.addEventListener("click", () => {
-        clickCount = 0;
-        counter.textContent = `Clicks: ${clickCount}`;
-        parrot.style.transform = "scale(1)";
-      });
-    </script>
-  </body>
+    </body>
 </html>
-
-
 
 
     <!-- </script>
-  </body>
-</html>
+  
     // <main>
     //   <div id="box-one" class="box box--mouseover">
     //     <p>hover over me</p>
