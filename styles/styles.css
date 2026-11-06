@@ -28,3 +28,10 @@ body {
     width : 300px;
   }
   
+  .overbox {
+    background: pink;
+  }
+
+  .clicked {
+  background-image: url(https://cultofthepartyparrot.com/parrots/hd/parrot.gif);
+}
